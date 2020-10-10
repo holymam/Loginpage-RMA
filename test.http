@@ -1,0 +1,29 @@
+@uri=http://localhost:3001/api/
+@json=Content-Type: application/json
+//测试注册页面
+###
+POST {{uri}}register
+{{json}}
+
+{
+    "username": "user22",
+    "password": "123456"
+}
+//测试查询页面
+###
+GET {{uri}}users
+//测试登录页面
+###
+POST {{uri}}login
+{{json}}
+
+{
+    "username":"user2",
+    "password":"123456"
+}
+
+//获取个人信息
+###
+get {{uri}}profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmODE2NmQyZjk3ODE2MDcyMGYyZmUwMCIsImlhdCI6MTYwMjMxODQ1OX0.531zL2g_xApTnNaLpbPi55QKfoZzeC2B2Of_Q98XqxI
+//这个token是后续都加到一个请求header里面就可以就可以完成授权的问题
